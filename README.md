@@ -2,6 +2,8 @@
 
 Checkout Gift Message adds a configurable message field to Zen Cart checkout without replacing core files or template files. It supports standard checkout, guest checkout, and One Page Checkout (OPC), including physical and virtual orders.
 
+Production package: [Checkout-Gift-Message-v2.0.4.zip](https://raw.githubusercontent.com/mprough/Checkout-Gift-Message/main/releases/Checkout-Gift-Message-v2.0.4.zip)
+
 ## Features
 
 - Custom field name
@@ -34,9 +36,23 @@ Checkout Gift Message adds a configurable message field to Zen Cart checkout wit
 
 The installer adds the `gift_message` column only when it is absent. A legacy installation is detected through that existing column, and its order data is left intact.
 
+## Configuration
+
+Open Configuration, Customer Details after installation.
+
+- Enable or disable the checkout field
+- Set the field name shown during checkout, in order details, and in email
+- Set checkout directions
+- Set the textarea placeholder
+- Set the maximum entry length from 1 through 5,000 characters
+
+The configured maximum is enforced in the browser and again on the server. Saved messages appear during checkout review, in order email, and in the admin order display.
+
 ## Upgrade
 
-Remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.4 through Plugin Manager. The new package uses observers and the existing database column.
+To upgrade from v2.0.0 through v2.0.3, copy the production package to the store and install v2.0.4 through Plugin Manager. Existing settings and saved order messages are preserved.
+
+For a legacy v1.1 installation, remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.4 through Plugin Manager. The new package uses observers and the existing database column.
 
 ## Uninstall
 
@@ -51,6 +67,8 @@ The plugin adds a nullable `gift_message` text column to the Zen Cart `orders` t
 Maintained by Melanie Prough, [PRO-Webs, Inc.](https://pro-webs.net/). Report bugs through the [PRO-Webs helpdesk](https://prowebsinc.zohodesk.com/portal/en/newticket).
 
 Free distribution is provided under GPL 2.0 without warranty. Installation, configuration, customization, and compatibility work for third party checkout replacements are not included.
+
+Copyright (C) 2012-2026 Melanie Prough, PRO-Webs, Inc.
 
 Original Zen Cart listing: [Checkout Gift Message](https://www.zen-cart.com/plugins/checkout-gift-message-vb1678)
 
