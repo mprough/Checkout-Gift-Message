@@ -1,5 +1,9 @@
 # Change history
 
+## v2.0.1, 2026-09-09
+
+- Corrected the storefront script filename so Zen Cart loads the gift message field during standard checkout, guest checkout, and One Page Checkout.
+
 ## v2.0.0, 2026-09-09
 
 - Rebuilt the 2012 customization as an encapsulated Plugin Manager package.
