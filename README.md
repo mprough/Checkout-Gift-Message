@@ -29,14 +29,14 @@ Checkout Gift Message adds a configurable message field to Zen Cart checkout wit
 1. Back up the store files and database.
 2. Copy the contents of `files` to the store root.
 3. In admin, open Modules, Plugin Manager.
-4. Install Checkout Gift Message v2.0.2.
+4. Install Checkout Gift Message v2.0.3.
 5. Open Configuration, Customer Details to set the field name, directions, placeholder, and maximum length.
 
 The installer adds the `gift_message` column only when it is absent. A legacy installation is detected through that existing column, and its order data is left intact.
 
 ## Upgrade
 
-Remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.2 through Plugin Manager. The new package uses observers and the existing database column.
+Remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.3 through Plugin Manager. The new package uses observers and the existing database column.
 
 ## Uninstall
 

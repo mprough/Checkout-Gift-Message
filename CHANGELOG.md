@@ -1,5 +1,11 @@
 # Change history
 
+## v2.0.3, 2026-09-09
+
+- Placed the One Page Checkout field directly beneath the order comments area.
+- Added a compact responsive layout that does not inherit checkout label and legend widths.
+- Hid the field as soon as checkout review or order submission begins so it cannot appear on the OPC loading screen.
+
 ## v2.0.2, 2026-09-09
 
 - Loaded the checkout field through the storefront observer so encapsulated template fallback works with Bootstrap and other installed templates.
