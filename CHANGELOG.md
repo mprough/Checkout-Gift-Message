@@ -1,5 +1,9 @@
 # Change history
 
+## v2.0.2, 2026-09-09
+
+- Loaded the checkout field through the storefront observer so encapsulated template fallback works with Bootstrap and other installed templates.
+
 ## v2.0.1, 2026-09-09
 
 - Corrected the storefront script filename so Zen Cart loads the gift message field during standard checkout, guest checkout, and One Page Checkout.

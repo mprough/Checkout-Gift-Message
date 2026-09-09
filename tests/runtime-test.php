@@ -5,6 +5,8 @@ define('TABLE_ORDERS', 'orders');
 define('CHECKOUT_GIFT_MESSAGE_STATUS', 'true');
 define('CHECKOUT_GIFT_MESSAGE_NAME', 'Card message');
 define('CHECKOUT_GIFT_MESSAGE_MAX_LENGTH', '10');
+define('CHECKOUT_GIFT_MESSAGE_DIRECTIONS', 'Enter a message.');
+define('CHECKOUT_GIFT_MESSAGE_PLACEHOLDER', 'Your message');
 
 class base
 {
@@ -51,9 +53,15 @@ $db = new TestDatabase();
 $_SESSION = [];
 $_POST = ['checkout_gift_message' => "  1234567890EXTRA  "];
 
-require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.1/catalog/includes/classes/observers/auto.checkout_gift_message.php';
+require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.2/catalog/includes/classes/observers/auto.checkout_gift_message.php';
 $observer = new zcObserverCheckoutGiftMessage();
 $nothing = null;
+$current_page_base = 'checkout_one';
+ob_start();
+$observer->update($nothing, 'NOTIFY_HTML_HEAD_END');
+$checkoutScript = ob_get_clean();
+assertTrue(str_contains($checkoutScript, 'checkoutGiftMessage'), 'Checkout field script did not render.');
+
 $observer->update($nothing, 'NOTIFY_HEADER_START_CHECKOUT_SHIPPING');
 assertTrue($_SESSION['checkout_gift_message'] === '1234567890', 'Server length enforcement failed.');
 
