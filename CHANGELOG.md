@@ -1,5 +1,10 @@
 # Change history
 
+## v2.0.4, 2026-09-09
+
+- Hid the field and confirmation review for every checkout submission and page transition.
+- Prevented the plugin text from appearing while `checkout_confirmation` processes the order.
+
 ## v2.0.3, 2026-09-09
 
 - Placed the One Page Checkout field directly beneath the order comments area.

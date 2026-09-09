@@ -53,7 +53,7 @@ $db = new TestDatabase();
 $_SESSION = [];
 $_POST = ['checkout_gift_message' => "  1234567890EXTRA  "];
 
-require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.3/catalog/includes/classes/observers/auto.checkout_gift_message.php';
+require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.4/catalog/includes/classes/observers/auto.checkout_gift_message.php';
 $observer = new zcObserverCheckoutGiftMessage();
 $nothing = null;
 $current_page_base = 'checkout_one';
@@ -63,6 +63,8 @@ $checkoutScript = ob_get_clean();
 assertTrue(str_contains($checkoutScript, 'checkoutGiftMessage'), 'Checkout field script did not render.');
 assertTrue(str_contains($checkoutScript, "comments.insertAdjacentElement('afterend', buildEditor())"), 'OPC comments placement is missing.');
 assertTrue(str_contains($checkoutScript, 'hideForCheckoutTransition'), 'Checkout transition hiding is missing.');
+assertTrue(str_contains($checkoutScript, "window.addEventListener('beforeunload'"), 'Page transition hiding is missing.');
+assertTrue(str_contains($checkoutScript, 'checkout-gift-message-transition'), 'Transition CSS guard is missing.');
 
 $observer->update($nothing, 'NOTIFY_HEADER_START_CHECKOUT_SHIPPING');
 assertTrue($_SESSION['checkout_gift_message'] === '1234567890', 'Server length enforcement failed.');
