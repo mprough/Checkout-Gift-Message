@@ -53,7 +53,7 @@ $db = new TestDatabase();
 $_SESSION = [];
 $_POST = ['checkout_gift_message' => "  1234567890EXTRA  "];
 
-require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.4/catalog/includes/classes/observers/auto.checkout_gift_message.php';
+require dirname(__DIR__) . '/files/zc_plugins/CheckoutGiftMessage/v2.0.5/catalog/includes/classes/observers/auto.checkout_gift_message.php';
 $observer = new zcObserverCheckoutGiftMessage();
 $nothing = null;
 $current_page_base = 'checkout_one';
