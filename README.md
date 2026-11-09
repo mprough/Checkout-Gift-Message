@@ -2,7 +2,7 @@
 
 Checkout Gift Message adds a configurable message field to Zen Cart checkout without replacing core files or template files. It supports standard checkout, guest checkout, and One Page Checkout (OPC), including physical and virtual orders.
 
-Production package: [Checkout-Gift-Message-v2.0.4.zip](https://raw.githubusercontent.com/mprough/Checkout-Gift-Message/main/releases/Checkout-Gift-Message-v2.0.4.zip)
+Production package: [Checkout-Gift-Message-v2.0.5.zip](https://raw.githubusercontent.com/mprough/Checkout-Gift-Message/main/releases/Checkout-Gift-Message-v2.0.5.zip)
 
 ## Features
 
@@ -14,6 +14,7 @@ Production package: [Checkout-Gift-Message-v2.0.4.zip](https://raw.githubusercon
 - Checkout confirmation review
 - Order email display
 - Admin order display
+- Invoice and packing slip display, including existing saved messages
 - Existing `orders.gift_message` data preserved during migration
 - Encapsulated Plugin Manager installation with no core edits
 
@@ -31,7 +32,7 @@ Production package: [Checkout-Gift-Message-v2.0.4.zip](https://raw.githubusercon
 1. Back up the store files and database.
 2. Copy the contents of `files` to the store root.
 3. In admin, open Modules, Plugin Manager.
-4. Install Checkout Gift Message v2.0.4.
+4. Install Checkout Gift Message v2.0.5.
 5. Open Configuration, Customer Details to set the field name, directions, placeholder, and maximum length.
 
 The installer adds the `gift_message` column only when it is absent. A legacy installation is detected through that existing column, and its order data is left intact.
@@ -46,13 +47,13 @@ Open Configuration, Customer Details after installation.
 - Set the textarea placeholder
 - Set the maximum entry length from 1 through 5,000 characters
 
-The configured maximum is enforced in the browser and again on the server. Saved messages appear during checkout review, in order email, and in the admin order display.
+The configured maximum is enforced in the browser and again on the server. Saved messages appear during checkout review, in order email, in the admin order display, and on invoices and packing slips. Print output preserves line breaks and safely escapes message text. Custom print replacements must retain the standard Zen Cart additional-data notifiers.
 
 ## Upgrade
 
-To upgrade from v2.0.0 through v2.0.3, copy the production package to the store and install v2.0.4 through Plugin Manager. Existing settings and saved order messages are preserved.
+To upgrade from v2.0.0 through v2.0.4, copy the production package to the store and install v2.0.5 through Plugin Manager. Existing settings and saved order messages are preserved.
 
-For a legacy v1.1 installation, remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.4 through Plugin Manager. The new package uses observers and the existing database column.
+For a legacy v1.1 installation, remove the old loose files by comparing them with `legacy/v1.1`. Do not copy the archived legacy files into a current store. Install v2.0.5 through Plugin Manager. The new package uses observers and the existing database column.
 
 ## Uninstall
 

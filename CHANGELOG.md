@@ -1,3 +1,8 @@
+## v2.0.5
+
+- Fixed saved gift messages missing from invoices and packing slips.
+- Added standard print observers without core edits. Existing order messages, configured labels, line breaks, and other observers' output are preserved.
+
 # Change history
 
 ## v2.0.4, 2026-09-09
